@@ -19,3 +19,10 @@ var routeWrap *RouterWrap
 func (rw *RouterWrap) RegisterHandler() {
 	rw.Router.HandleFunc("/ping", service.HandlePing).Methods(http.MethodGet)
 }
+
+// InitializeRoute is a function which returns new RouterWrap which has a mux's router inside
+func InitializeRoute() *RouterWrap {
+	routeWrap = new(RouterWrap)
+	routeWrap.Router = mux.NewRouter()
+	return routeWrap
+}
