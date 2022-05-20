@@ -1,0 +1,11 @@
+# how to use
+#  make mock-interfaces INTERFACE_NAME=ipanic_handler
+# for generate mockgen service
+GOPATH=
+set gopath /home/yuwonobangunnagoro/go
+Mockgen Not found
+# for generate mockgen interfaces
+echo "running mockgen interface ipanic_handler"
+running mockgen interface ipanic_handler
+cd interfaces && pwd && mockgen -source=ipanic_handler.go -destination=mocks/mock_ipanic_handler.go 
+/home/yuwonobangunnagoro/go/inventory/interfaces
