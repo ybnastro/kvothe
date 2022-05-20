@@ -62,6 +62,7 @@ func loadConfig() *resources.AppConfig {
 	conf.Core.Inventory.Slack.WebhookURL = os.Getenv("INVENTORY_SERVICE_WEBHOOK_URL")
 	conf.Core.Inventory.Slack.WebhookChannel = os.Getenv("INVENTORY_SERVICE_WEBHOOK_CHANNEL")
 	conf.Core.Inventory.Slack.IsEnableSlack = utils.GetBool(os.Getenv("INVENTORY_SERVICE_IS_ENABLE_SLACK"))
-	log.Println(conf.Core.Inventory.Slack)
+
+	conf.Core.Inventory.GRPC.Port = os.Getenv("INVENTORY_SERVICE_GRPC_PORT")
 	return &conf
 }

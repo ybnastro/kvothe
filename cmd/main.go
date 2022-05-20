@@ -54,7 +54,10 @@ func ShutdownApp(httpServer *http.Server, grpcServer *server.GRPCServer, serverN
 		if err := httpServer.ListenAndServe(); err != nil && err != http.ErrServerClosed {
 			log.Fatalf("[ERROR][httpServer] ListenAndServe: %s\n", err)
 		}
-		grpcServer.Serve(grpcPort)
+
+		if err := grpcServer.Serve(grpcPort); err != nil {
+			log.Fatalf("[ERROR][grpcServer] Serve: %s\n", err)
+		}
 	}()
 
 	<-done
