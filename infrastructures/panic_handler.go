@@ -7,8 +7,8 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/astronautsid/astro-ims-be/interfaces"
-	"github.com/astronautsid/astro-ims-be/resources"
+	"github.com/SurgicalSteel/kvothe/interfaces"
+	"github.com/SurgicalSteel/kvothe/resources"
 
 	"github.com/ashwanthkumar/slack-go-webhook"
 	"github.com/gin-gonic/gin"
@@ -58,11 +58,11 @@ func (pc *PanicHandlerController) SetPayloadSlack(resp *resources.PanicHandlerRe
 	// fields panic
 	startedAt := time.Now().Format("2006-01-02 15:04:05")
 	attachment1.AddField(slack.Field{Title: "Panic-service", Value: resp.Service}).AddField(slack.Field{Title: "Env", Value: pc.SlackConfig.SlackWebhookEnv})
-	attachment1.AddField(slack.Field{Title: "Started At", Value: startedAt}).AddField(slack.Field{Title: "Created by", Value: "inventory backend"})
+	attachment1.AddField(slack.Field{Title: "Started At", Value: startedAt}).AddField(slack.Field{Title: "Created by", Value: "kvothe backend"})
 
 	payload := slack.Payload{
 		Text:        resp.Message,
-		Username:    "inventory backend",
+		Username:    "kvothe backend",
 		Channel:     pc.SlackConfig.SlackWebhookChannel,
 		IconEmoji:   ":monkey_face:",
 		Attachments: []slack.Attachment{attachment, attachment1},

@@ -5,7 +5,7 @@
 package mocks
 
 import (
-	resources "github.com/astronautsid/astro-ims-be/resources"
+	resources "github.com/SurgicalSteel/kvothe/resources"
 	reflect "reflect"
 
 	gomock "github.com/golang/mock/gomock"

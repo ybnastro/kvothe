@@ -4,7 +4,7 @@ import (
 	"testing"
 )
 
-func TestGetFuncName(t *testing.T) {
+func TestUtils_GetFuncName(t *testing.T) {
 	tests := []struct {
 		name string
 		want string

@@ -6,15 +6,15 @@ import (
 	"runtime/debug"
 	"sync"
 
-	"github.com/astronautsid/astro-ims-be/controllers"
-	"github.com/astronautsid/astro-ims-be/interfaces"
-	"github.com/astronautsid/astro-ims-be/utils"
+	"github.com/SurgicalSteel/kvothe/controllers"
+	"github.com/SurgicalSteel/kvothe/interfaces"
+	"github.com/SurgicalSteel/kvothe/utils"
 
 	"github.com/gin-gonic/gin"
 )
 
 const (
-	inventoryService = "inventory-service"
+	kvotheService = "kvothe-service"
 )
 
 func SendPanicSlackWebhook(ipanic interfaces.IPanicHandler, c *gin.Context, serviceName, message string, done chan bool) {
@@ -28,8 +28,8 @@ func SendPanicSlackWebhook(ipanic interfaces.IPanicHandler, c *gin.Context, serv
 
 func definePanicHandler(serviceName string, r interface{}) interfaces.IPanicHandler {
 	switch serviceName {
-	case inventoryService:
-		return r.(*controllers.InventoryController).PanicHandler
+	case kvotheService:
+		return r.(*controllers.KvotheController).PanicHandler
 	default:
 		return nil
 	}

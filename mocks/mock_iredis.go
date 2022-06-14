@@ -5,7 +5,7 @@
 package mocks
 
 import (
-	resources "github.com/astronautsid/astro-ims-be/resources"
+	resources "github.com/SurgicalSteel/kvothe/resources"
 	reflect "reflect"
 
 	redsync "github.com/go-redsync/redsync/v4"

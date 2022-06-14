@@ -7,8 +7,8 @@ package mocks
 import (
 	context "context"
 	sql "database/sql"
-	interfaces "github.com/astronautsid/astro-ims-be/interfaces"
-	resources "github.com/astronautsid/astro-ims-be/resources"
+	interfaces "github.com/SurgicalSteel/kvothe/interfaces"
+	resources "github.com/SurgicalSteel/kvothe/resources"
 	reflect "reflect"
 
 	gomock "github.com/golang/mock/gomock"

@@ -1,9 +1,9 @@
 package server
 
 import (
-	"github.com/astronautsid/astro-ims-be/interfaces"
-	"github.com/astronautsid/astro-ims-be/middlewares"
-	"github.com/astronautsid/astro-ims-be/resources"
+	"github.com/SurgicalSteel/kvothe/interfaces"
+	"github.com/SurgicalSteel/kvothe/middlewares"
+	"github.com/SurgicalSteel/kvothe/resources"
 
 	"github.com/gin-contrib/gzip"
 	"github.com/gin-gonic/gin"
@@ -27,7 +27,7 @@ func Router() interfaces.IRouter {
 //Routing is a function for http routing
 func (route *route) Routing(config *resources.AppConfig, dbObj map[string]interfaces.IDatabase, redisdb map[string]interfaces.IRedis) *gin.Engine {
 
-	inventoryController := ServiceInject(config, dbObj, redisdb)
+	kvotheController := ServiceInject(config, dbObj, redisdb)
 
 	gin.SetMode(config.GINMode)
 	var engine *gin.Engine
@@ -39,13 +39,21 @@ func (route *route) Routing(config *resources.AppConfig, dbObj map[string]interf
 
 	engine.Use(gzip.Gzip(gzip.BestCompression))
 	engine.Use(middlewares.SecureMiddleware())
-	engine.Use(middlewares.PanicGlobalRecover("inventory-service", inventoryController))
+	engine.Use(middlewares.PanicGlobalRecover("kvothe-service", kvotheController))
 
+	engine.LoadHTMLGlob("../files/templates/*.tmpl")
 	noAuth := engine.Group("/api")
 	{
-		noAuth.GET("/ping", inventoryController.PingHandler)
-		noAuth.GET("/panic", inventoryController.TriggerPanic)
-		noAuth.GET("/slack", inventoryController.SlackManualHandler)
+		noAuth.GET("/ping", kvotheController.PingHandler)
+		noAuth.GET("/panic", kvotheController.TriggerPanic)
+		noAuth.GET("/slack", kvotheController.SlackManualHandler)
+		noAuth.GET("/quote/:id", kvotheController.GetSongQuoteByIDHandler)
+		noAuth.POST("/backfill-redis", kvotheController.BackfillRedisHandler)
+	}
+
+	noAuthPage := engine.Group("/page")
+	{
+		noAuthPage.GET("/all", kvotheController.GetAllSongPage)
 	}
 
 	return engine

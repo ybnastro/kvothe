@@ -19,7 +19,7 @@ type AppConfig struct {
 }
 
 type SectionCore struct {
-	Inventory SectionService `json:",omitempty"`
+	Kvothe SectionService `json:",omitempty"`
 }
 
 // SectionService is a struct for Service Configuration

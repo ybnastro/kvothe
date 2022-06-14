@@ -2,7 +2,7 @@ package interfaces
 
 //go:generate mockgen --destination=../mocks/mock_iredis.go --package=mocks --source=iredis.go
 import (
-	"github.com/astronautsid/astro-ims-be/resources"
+	"github.com/SurgicalSteel/kvothe/resources"
 
 	"github.com/go-redsync/redsync/v4"
 )

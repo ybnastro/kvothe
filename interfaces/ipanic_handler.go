@@ -2,7 +2,7 @@ package interfaces
 
 //go:generate mockgen --destination=../mocks/mock_ipanic_handler.go --package=mocks --source=ipanic_handler.go
 import (
-	"github.com/astronautsid/astro-ims-be/resources"
+	"github.com/SurgicalSteel/kvothe/resources"
 
 	"github.com/ashwanthkumar/slack-go-webhook"
 	"github.com/gin-gonic/gin"

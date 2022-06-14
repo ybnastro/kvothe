@@ -3,7 +3,7 @@ package interfaces
 import (
 	"github.com/gin-gonic/gin"
 
-	"github.com/astronautsid/astro-ims-be/resources"
+	"github.com/SurgicalSteel/kvothe/resources"
 )
 
 // IRouter is interface for routing

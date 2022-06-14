@@ -1,0 +1,9 @@
+INSERT INTO public.song_quotes(quote_text, song_title, album_title, album_year, band_name) VALUES('Don''t ever let life pass you by', 'Warning', 'Morning View',2001 ,'Incubus');
+INSERT INTO public.song_quotes(quote_text, song_title, album_title, album_year, band_name) VALUES('Better to save the mystery than surrender to the secret', 'Another Day', 'Images and Words',1992 ,'Dream Theater'); 
+INSERT INTO public.song_quotes(quote_text, song_title, album_title, album_year, band_name) VALUES('The core of all life is a limitless chest of tales', 'Storytime', 'Imaginaerum',2011 ,'Nightwish'); 
+INSERT INTO public.song_quotes(quote_text, song_title, album_title, album_year, band_name) VALUES('The more I see, the less I know, the more I like to let it go', 'Snow (Hey Oh)', 'Stadium Arcadium',2006 ,'Red Hot Chili Peppers'); 
+INSERT INTO public.song_quotes(quote_text, song_title, album_title, album_year, band_name) VALUES('Without you, the poetry within me is dead', 'Gethsemane', 'Oceanborn',1998 ,'Nightwish'); 
+INSERT INTO public.song_quotes(quote_text, song_title, album_title, album_year, band_name) VALUES('The cycle of suffering goes on, but the memories of you stay strong, Someday I too will fly and find you again' , 'Blackbird', 'Blackbird', 2007, 'Alter Bridge');
+INSERT INTO public.song_quotes(quote_text, song_title, album_title, album_year, band_name) VALUES('When you change yourself, you change the world', 'Silvera', 'Magma', 2016, 'Gojira');
+INSERT INTO public.song_quotes(quote_text, song_title, album_title, album_year, band_name) VALUES('Whatever tomorrow brings I''ll be there, with open arms and open eyes', 'Drive', 'Make Yourself', 1999,'Incubus');
+INSERT INTO public.song_quotes(quote_text, song_title, album_title, album_year, band_name) VALUES('Arise! My sweetest friend, or be forever fallen', 'At The Left Hand ov God', 'The Apostasy',2007,'Behemoth');

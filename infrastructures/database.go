@@ -8,9 +8,9 @@ import (
 	"log"
 	"time"
 
-	"github.com/astronautsid/astro-ims-be/interfaces"
-	"github.com/astronautsid/astro-ims-be/resources"
-	"github.com/astronautsid/astro-ims-be/utils"
+	"github.com/SurgicalSteel/kvothe/interfaces"
+	"github.com/SurgicalSteel/kvothe/resources"
+	"github.com/SurgicalSteel/kvothe/utils"
 
 	"github.com/jmoiron/sqlx"
 	_ "github.com/lib/pq"

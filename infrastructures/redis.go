@@ -10,7 +10,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/astronautsid/astro-ims-be/resources"
+	"github.com/SurgicalSteel/kvothe/resources"
 
 	"github.com/RediSearch/redisearch-go/redisearch"
 	"github.com/go-redis/redis"

@@ -3,6 +3,8 @@ package utils
 import (
 	"reflect"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestUtil_GetUniqueElementsSliceOfString(t *testing.T) {
@@ -12,9 +14,14 @@ func TestUtil_GetUniqueElementsSliceOfString(t *testing.T) {
 		expectedResult []string
 	}{
 		{
-			name:           "normal slice duplicate",
+			name:           "normal slice with duplication",
 			inputSlice:     []string{"this", "one", "and", "that", "one", "are", "yours", "and", "shut", "up"},
 			expectedResult: []string{"this", "one", "and", "that", "are", "yours", "shut", "up"},
+		},
+		{
+			name:           "normal slice without duplication",
+			inputSlice:     []string{"Armin", "van", "Buuren", "is", "the", "greatest", "DJ", "ever"},
+			expectedResult: []string{"Armin", "van", "Buuren", "is", "the", "greatest", "DJ", "ever"},
 		},
 		{
 			name:           "empty slice",
@@ -26,14 +33,14 @@ func TestUtil_GetUniqueElementsSliceOfString(t *testing.T) {
 	for _, tc := range testCases {
 		t.Run(tc.name, func(t *testing.T) {
 			actualResult := GetUniqueElementsSliceOfString(tc.inputSlice)
-			if len(actualResult) != len(tc.expectedResult) {
-				t.Error("slice length are not the same")
+			if !assert.ElementsMatch(t, tc.expectedResult, actualResult) {
+				t.Error("expected result slice and actual result slice are not the same")
 			}
 		})
 	}
 }
 
-func TestUtil_ConvertSliceOfStringIntoSliceOfInt64(t *testing.T) {
+func TestUtils_ConvertSliceOfStringIntoSliceOfInt64(t *testing.T) {
 	testCases := []struct {
 		name           string
 		rawSlice       []string
@@ -64,7 +71,7 @@ func TestUtil_ConvertSliceOfStringIntoSliceOfInt64(t *testing.T) {
 	}
 }
 
-func TestUtil_ConstructSliceOfInt64IntoString(t *testing.T) {
+func TestUtils_ConstructSliceOfInt64IntoString(t *testing.T) {
 	testCases := []struct {
 		name           string
 		rawSlice       []int64

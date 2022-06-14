@@ -5,7 +5,7 @@ import (
 	"context"
 	"database/sql"
 
-	"github.com/astronautsid/astro-ims-be/resources"
+	"github.com/SurgicalSteel/kvothe/resources"
 
 	"github.com/jmoiron/sqlx"
 )

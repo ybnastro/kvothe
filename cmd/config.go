@@ -4,8 +4,8 @@ import (
 	"log"
 	"os"
 
-	"github.com/astronautsid/astro-ims-be/resources"
-	"github.com/astronautsid/astro-ims-be/utils"
+	"github.com/SurgicalSteel/kvothe/resources"
+	"github.com/SurgicalSteel/kvothe/utils"
 
 	"github.com/alexsasharegan/dotenv"
 )
@@ -28,41 +28,41 @@ func loadConfig() *resources.AppConfig {
 	conf.HTTPConfig.Timeout = utils.GetInt(os.Getenv("HTTP_TIMEOUT_SECOND"))
 	conf.HTTPConfig.DisableKeepAlive = utils.GetBool(os.Getenv("HTTP_DISABLE_KEEP_ALIVE"))
 
-	conf.Core.Inventory.Redis.URL = os.Getenv("INVENTORY_SERVICE_REDIS_URL")
-	conf.Core.Inventory.Redis.Port = utils.GetInt(os.Getenv("INVENTORY_SERVICE_REDIS_PORT"))
-	conf.Core.Inventory.Redis.DB = utils.GetInt(os.Getenv("INVENTORY_SERVICE_REDIS_DB"))
-	conf.Core.Inventory.Redis.Password = os.Getenv("INVENTORY_SERVICE_REDIS_PASSWORD")
-	conf.Core.Inventory.Redis.PoolSize = utils.GetInt(os.Getenv("INVENTORY_SERVICE_REDIS_POOLSIZE"))
-	conf.Core.Inventory.Redis.MinIdleConns = utils.GetInt(os.Getenv("INVENTORY_SERVICE_REDIS_MINIDLECONNS"))
+	conf.Core.Kvothe.Redis.URL = os.Getenv("KVOTHE_SERVICE_REDIS_URL")
+	conf.Core.Kvothe.Redis.Port = utils.GetInt(os.Getenv("KVOTHE_SERVICE_REDIS_PORT"))
+	conf.Core.Kvothe.Redis.DB = utils.GetInt(os.Getenv("KVOTHE_SERVICE_REDIS_DB"))
+	conf.Core.Kvothe.Redis.Password = os.Getenv("KVOTHE_SERVICE_REDIS_PASSWORD")
+	conf.Core.Kvothe.Redis.PoolSize = utils.GetInt(os.Getenv("KVOTHE_SERVICE_REDIS_POOLSIZE"))
+	conf.Core.Kvothe.Redis.MinIdleConns = utils.GetInt(os.Getenv("KVOTHE_SERVICE_REDIS_MINIDLECONNS"))
 
-	conf.Core.Inventory.DBPostgres.READ.Username = os.Getenv("INVENTORY_SERVICE_POSTGRES_DATABASE_READ_USERNAME")
-	conf.Core.Inventory.DBPostgres.READ.Password = os.Getenv("INVENTORY_SERVICE_POSTGRES_DATABASE_READ_PASSWORD")
-	conf.Core.Inventory.DBPostgres.READ.URL = os.Getenv("INVENTORY_SERVICE_POSTGRES_DATABASE_READ_URL")
-	conf.Core.Inventory.DBPostgres.READ.Port = os.Getenv("INVENTORY_SERVICE_POSTGRES_DATABASE_READ_PORT")
-	conf.Core.Inventory.DBPostgres.READ.DBName = os.Getenv("INVENTORY_SERVICE_POSTGRES_DATABASE_READ_DB_NAME")
-	conf.Core.Inventory.DBPostgres.READ.MaxIdleConns = utils.GetInt(os.Getenv("INVENTORY_SERVICE_POSTGRES_DATABASE_READ_MAXIDLECONNS"))
-	conf.Core.Inventory.DBPostgres.READ.MaxOpenConns = utils.GetInt(os.Getenv("INVENTORY_SERVICE_POSTGRES_DATABASE_READ_MAXOPENCONNS"))
-	conf.Core.Inventory.DBPostgres.READ.MaxLifeTime = utils.GetInt(os.Getenv("INVENTORY_SERVICE_POSTGRES_DATABASE_READ_MAXLIFETIME"))
-	conf.Core.Inventory.DBPostgres.READ.Timeout = (os.Getenv("INVENTORY_SERVICE_POSTGRES_DATABASE_READ_TIMEOUT"))
+	conf.Core.Kvothe.DBPostgres.READ.Username = os.Getenv("KVOTHE_SERVICE_POSTGRES_DATABASE_READ_USERNAME")
+	conf.Core.Kvothe.DBPostgres.READ.Password = os.Getenv("KVOTHE_SERVICE_POSTGRES_DATABASE_READ_PASSWORD")
+	conf.Core.Kvothe.DBPostgres.READ.URL = os.Getenv("KVOTHE_SERVICE_POSTGRES_DATABASE_READ_URL")
+	conf.Core.Kvothe.DBPostgres.READ.Port = os.Getenv("KVOTHE_SERVICE_POSTGRES_DATABASE_READ_PORT")
+	conf.Core.Kvothe.DBPostgres.READ.DBName = os.Getenv("KVOTHE_SERVICE_POSTGRES_DATABASE_READ_DB_NAME")
+	conf.Core.Kvothe.DBPostgres.READ.MaxIdleConns = utils.GetInt(os.Getenv("KVOTHE_SERVICE_POSTGRES_DATABASE_READ_MAXIDLECONNS"))
+	conf.Core.Kvothe.DBPostgres.READ.MaxOpenConns = utils.GetInt(os.Getenv("KVOTHE_SERVICE_POSTGRES_DATABASE_READ_MAXOPENCONNS"))
+	conf.Core.Kvothe.DBPostgres.READ.MaxLifeTime = utils.GetInt(os.Getenv("KVOTHE_SERVICE_POSTGRES_DATABASE_READ_MAXLIFETIME"))
+	conf.Core.Kvothe.DBPostgres.READ.Timeout = (os.Getenv("KVOTHE_SERVICE_POSTGRES_DATABASE_READ_TIMEOUT"))
 
-	conf.Core.Inventory.DBPostgres.WRITE.Username = os.Getenv("INVENTORY_SERVICE_POSTGRES_DATABASE_WRITE_USERNAME")
-	conf.Core.Inventory.DBPostgres.WRITE.Password = os.Getenv("INVENTORY_SERVICE_POSTGRES_DATABASE_WRITE_PASSWORD")
-	conf.Core.Inventory.DBPostgres.WRITE.URL = os.Getenv("INVENTORY_SERVICE_POSTGRES_DATABASE_WRITE_URL")
-	conf.Core.Inventory.DBPostgres.WRITE.Port = os.Getenv("INVENTORY_SERVICE_POSTGRES_DATABASE_WRITE_PORT")
-	conf.Core.Inventory.DBPostgres.WRITE.DBName = os.Getenv("INVENTORY_SERVICE_POSTGRES_DATABASE_WRITE_DB_NAME")
-	conf.Core.Inventory.DBPostgres.WRITE.MaxIdleConns = utils.GetInt(os.Getenv("INVENTORY_SERVICE_POSTGRES_DATABASE_WRITE_MAXIDLECONNS"))
-	conf.Core.Inventory.DBPostgres.WRITE.MaxOpenConns = utils.GetInt(os.Getenv("INVENTORY_SERVICE_POSTGRES_DATABASE_WRITE_MAXOPENCONNS"))
-	conf.Core.Inventory.DBPostgres.WRITE.MaxLifeTime = utils.GetInt(os.Getenv("INVENTORY_SERVICE_POSTGRES_DATABASE_WRITE_MAXLIFETIME"))
-	conf.Core.Inventory.DBPostgres.WRITE.Timeout = os.Getenv("INVENTORY_SERVICE_POSTGRES_DATABASE_WRITE_TIMEOUT")
+	conf.Core.Kvothe.DBPostgres.WRITE.Username = os.Getenv("KVOTHE_SERVICE_POSTGRES_DATABASE_WRITE_USERNAME")
+	conf.Core.Kvothe.DBPostgres.WRITE.Password = os.Getenv("KVOTHE_SERVICE_POSTGRES_DATABASE_WRITE_PASSWORD")
+	conf.Core.Kvothe.DBPostgres.WRITE.URL = os.Getenv("KVOTHE_SERVICE_POSTGRES_DATABASE_WRITE_URL")
+	conf.Core.Kvothe.DBPostgres.WRITE.Port = os.Getenv("KVOTHE_SERVICE_POSTGRES_DATABASE_WRITE_PORT")
+	conf.Core.Kvothe.DBPostgres.WRITE.DBName = os.Getenv("KVOTHE_SERVICE_POSTGRES_DATABASE_WRITE_DB_NAME")
+	conf.Core.Kvothe.DBPostgres.WRITE.MaxIdleConns = utils.GetInt(os.Getenv("KVOTHE_SERVICE_POSTGRES_DATABASE_WRITE_MAXIDLECONNS"))
+	conf.Core.Kvothe.DBPostgres.WRITE.MaxOpenConns = utils.GetInt(os.Getenv("KVOTHE_SERVICE_POSTGRES_DATABASE_WRITE_MAXOPENCONNS"))
+	conf.Core.Kvothe.DBPostgres.WRITE.MaxLifeTime = utils.GetInt(os.Getenv("KVOTHE_SERVICE_POSTGRES_DATABASE_WRITE_MAXLIFETIME"))
+	conf.Core.Kvothe.DBPostgres.WRITE.Timeout = os.Getenv("KVOTHE_SERVICE_POSTGRES_DATABASE_WRITE_TIMEOUT")
 
-	conf.Core.Inventory.Name = os.Getenv("INVENTORY_SERVICE")
-	conf.Core.Inventory.Environment = os.Getenv("INVENTORY_SERVICE_ENVIRONMENT")
-	conf.Core.Inventory.Port = os.Getenv("INVENTORY_SERVICE_PORT")
+	conf.Core.Kvothe.Name = os.Getenv("KVOTHE_SERVICE")
+	conf.Core.Kvothe.Environment = os.Getenv("KVOTHE_SERVICE_ENVIRONMENT")
+	conf.Core.Kvothe.Port = os.Getenv("KVOTHE_SERVICE_PORT")
 
-	conf.Core.Inventory.Slack.WebhookURL = os.Getenv("INVENTORY_SERVICE_WEBHOOK_URL")
-	conf.Core.Inventory.Slack.WebhookChannel = os.Getenv("INVENTORY_SERVICE_WEBHOOK_CHANNEL")
-	conf.Core.Inventory.Slack.IsEnableSlack = utils.GetBool(os.Getenv("INVENTORY_SERVICE_IS_ENABLE_SLACK"))
+	conf.Core.Kvothe.Slack.WebhookURL = os.Getenv("KVOTHE_SERVICE_WEBHOOK_URL")
+	conf.Core.Kvothe.Slack.WebhookChannel = os.Getenv("KVOTHE_SERVICE_WEBHOOK_CHANNEL")
+	conf.Core.Kvothe.Slack.IsEnableSlack = utils.GetBool(os.Getenv("KVOTHE_SERVICE_IS_ENABLE_SLACK"))
 
-	conf.Core.Inventory.GRPC.Port = os.Getenv("INVENTORY_SERVICE_GRPC_PORT")
+	conf.Core.Kvothe.GRPC.Port = os.Getenv("KVOTHE_SERVICE_GRPC_PORT")
 	return &conf
 }

@@ -3,10 +3,10 @@ package utils
 import (
 	"testing"
 
-	"github.com/astronautsid/astro-ims-be/resources"
+	"github.com/SurgicalSteel/kvothe/resources"
 )
 
-func TestUtil_GeneratePostgreURL(t *testing.T) {
+func TestUtils_GeneratePostgreURL(t *testing.T) {
 	testCases := []struct {
 		name           string
 		account        resources.DBAccount

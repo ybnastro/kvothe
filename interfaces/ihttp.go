@@ -1,7 +1,7 @@
 package interfaces
 
 //go:generate mockgen --destination=../mocks/mock_ihttp.go --package=mocks --source=ihttp.go
-import "github.com/astronautsid/astro-ims-be/resources"
+import "github.com/SurgicalSteel/kvothe/resources"
 
 //IHTTP is the general interface for HTTP Call
 type IHTTP interface {

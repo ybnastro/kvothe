@@ -11,8 +11,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/astronautsid/astro-ims-be/resources"
-	"github.com/astronautsid/astro-ims-be/utils"
+	"github.com/SurgicalSteel/kvothe/resources"
+	"github.com/SurgicalSteel/kvothe/utils"
 )
 
 const (

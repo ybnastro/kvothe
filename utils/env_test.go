@@ -2,7 +2,7 @@ package utils
 
 import "testing"
 
-func TestUtil_GetInt(t *testing.T) {
+func TestUtils_GetInt(t *testing.T) {
 	testCases := []struct {
 		name           string
 		envString      string
@@ -35,7 +35,7 @@ func TestUtil_GetInt(t *testing.T) {
 	}
 }
 
-func TestUtil_GetInt64(t *testing.T) {
+func TestUtils_GetInt64(t *testing.T) {
 	testCases := []struct {
 		name           string
 		envString      string
@@ -68,7 +68,7 @@ func TestUtil_GetInt64(t *testing.T) {
 	}
 }
 
-func TestUtil_GetBool(t *testing.T) {
+func TestUtils_GetBool(t *testing.T) {
 	testCases := []struct {
 		name           string
 		envString      string

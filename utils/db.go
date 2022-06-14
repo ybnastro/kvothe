@@ -3,7 +3,7 @@ package utils
 import (
 	"fmt"
 
-	"github.com/astronautsid/astro-ims-be/resources"
+	"github.com/SurgicalSteel/kvothe/resources"
 )
 
 //GeneratePostgreURL generates postgresql URL from DB Account struct

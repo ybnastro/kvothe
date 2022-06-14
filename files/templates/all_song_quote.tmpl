@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <style>
+            #custom {
+                font-family: Arial, Helvetica, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+            }
+
+            #custom td, #custom th {
+                border: 1px solid #ddd;
+                padding: 8px;
+            }
+
+            #custom tr:nth-child(even){background-color: #f2f2f2;}
+
+            #custom tr:hover {background-color: #ddd;}
+
+            #custom th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+                background-color: #04AA6D;
+                color: white;
+            }
+        </style>
+        <title>{{ .title }}</title>
+    </head>
+    <body>
+        <table id="custom">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Quote</th>
+                    <th>Song Title</th>
+                    <th>Album Title</th>
+                    <th>Album Year</th>
+                    <th>Band Name</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            {{ range .quoteData }}
+            <tr>
+                <td>{{ .ID }}</td>
+                <td>{{ .QuoteText }}</td>
+                <td>{{ .SongTitle }}</td>
+                <td>{{ .AlbumTitle }}</td>
+                <td>{{ .AlbumYear }}</td>
+                <td>{{ .BandName }}</td>
+            </tr>
+            {{ end }}
+            </tbody>
+        </table>
+    </body>
+</html>

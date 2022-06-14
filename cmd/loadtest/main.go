@@ -7,7 +7,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/astronautsid/astro-ims-be/utils"
+	"github.com/SurgicalSteel/kvothe/utils"
 
 	"github.com/alexsasharegan/dotenv"
 	vegeta "github.com/tsenart/vegeta/lib"

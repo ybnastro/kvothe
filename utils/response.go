@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/astronautsid/astro-ims-be/resources"
+	"github.com/SurgicalSteel/kvothe/resources"
 
 	"github.com/gin-gonic/gin"
 )
@@ -21,7 +21,7 @@ func GetErrorResponse(message string, statusCode int, code string) *resources.Ap
 //RespondWithError for sending response with status not 200
 func RespondWithError(c *gin.Context, status int, data interface{}) {
 	c.Set("responseBody", data)
-	c.JSON(status, status)
+	c.JSON(status, data)
 }
 
 // ResponseJSON for sending response with status 200
